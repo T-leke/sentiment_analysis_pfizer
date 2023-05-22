@@ -1,4 +1,5 @@
 import tweepy
+import psycopg2
 
 consumer_key = 'oYOe9RFvv1s6Z8TyfpzXM4R5a'
 consumer_secret = '78SDg96GwxZu0jOQo6vmebQi2t7Xqu75J3HsVtxIxtarIKgS2L'
@@ -19,4 +20,8 @@ tweets = api.search_tweets(q=search_query, tweet_mode='extended', count=num_twee
 
 for tweet in tweets:
     # Process or store each tweet as desired
-    print(tweet.full_text)
+    tweet_text = tweet.full_text
+    tweet_time = tweet.created_at
+
+
+print(tweet_time)
